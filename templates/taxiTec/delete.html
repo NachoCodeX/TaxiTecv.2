@@ -1,0 +1,11 @@
+{% extends '../base.html' %}
+
+{% block content %}
+	<form method="post">
+		{% csrf_token %}
+		<h1>¿Desea eliminar el rergistro de {{user}} ?</h1>
+		<button type="submit">Si, eliminar</button>
+		<a href="/home/{{request.user.userprofile.user_type}}">Cancelar</a>
+	</form>
+{% endblock content %}
+	

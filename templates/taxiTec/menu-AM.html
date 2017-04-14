@@ -1,0 +1,24 @@
+<header class="header">
+		<nav class="menu">
+			<div class="item-image">
+				<img src="{{user.userprofile.image.url}}" alt="">
+				<p>{{user.first_name}} {{user.last_name}}</p>
+			
+			</div>
+				<div class="item">
+				<a href="{% url 'taxitec:homeAM' %}"><i class="icon icon-home"></i><p>Inicio</p></a>
+			</div>
+
+			<div class="item">
+				<a href="{% url 'taxitec:AM-PR' %}"><i class="icon icon-user"></i><p>Propietarios</p></a>
+			</div>
+			<div class="item"><a href="{% url 'taxitec:AM-CH' %}"><i class="icon icon-users"></i><p>Choferes</p></a></div>
+
+			<div class="item"><a href="#"><i class="icon icon-automobile"></i><p>Vehiculos</p></a></div>
+		
+
+			<div class="item"><a href="#"><i class="icon icon-cogs"></i><p>Informacion</p></a></div class="item">
+			
+			<div class="item"><a href="{% url 'taxitec:logout' %}"><i class="icon icon-enter"></i><p>Logout</p></a></div>
+		</nav>
+	</header>

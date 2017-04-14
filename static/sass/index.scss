@@ -1,0 +1,41 @@
+@import 'variables';
+.main{
+	width: 90%;
+	margin: 3em auto;
+	h1{
+		font-size: 3em;
+	}
+
+	&>p{
+		font-size: 1.3em;
+	}
+}
+
+.item-main{
+	background: #eee;
+	width: 100%;
+
+	h2{
+		font-size: 2em;
+	}
+}
+
+.subitem-main{
+	width:100%;
+	display:flex;
+	a{	
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		color: #fff;
+		background: lighten($a-color,12);
+		width:7em;
+		height: 7em;
+		i{
+			font-size: 4em;
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+
+
+{% block body %}
+		{% block menu %}
+			{% include "taxiTec/menu-AM.html" %}
+		{% endblock menu %}
+
+		{% block content %}
+			<form method="POST" enctype="multipart/form-data" class="form-login">
+				{% csrf_token %}
+				{{userform.as_p}}
+				{{profileform.as_p}}
+				{{ownerform.as_p}}
+				<button type="submit">Guardar</button>
+			</form>
+		{% endblock content %}
+{% endblock body %}	

@@ -1,0 +1,20 @@
+{% extends '../base.html' %}
+
+{% block body %}
+	{% block content %}
+
+		<section class="container">
+			<a href="{% url 'taxitec:homeAM' %}">Volver</a>
+			<h1 style='text-align:center'>Registrar un propietario</h1>
+			<form method="POST" class="form-login" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form.user}}
+				{{form.profile}}
+				<button type="submit" class="form__submit">Guardar</button>
+			</form>
+			
+		</section>
+
+	{% endblock content %}
+	
+{% endblock body %}

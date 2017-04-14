@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Home{% endblock title %}</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'sass/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'sass/css/icon.css' %}">
+	<script src="{% static 'js/main.js' %}"></script>
+</head>
+	
+
+{% block body %}
+	<body class="index-form">
+		{% block menu %}
+			
+		{% endblock menu %}
+
+		{% block content %}
+			
+		{% endblock content %}
+
+		{% block footer %}
+			<footer>&copy; Copyright 2017-Nacho Castillo</footer>
+		{% endblock footer %}
+	</body>
+{% endblock body %}
+</html>

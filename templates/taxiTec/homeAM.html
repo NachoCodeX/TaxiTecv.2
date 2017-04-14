@@ -1,0 +1,21 @@
+{% extends '../base.html' %}
+{% block title %}
+	Home-ADMINISTRADOR
+{% endblock title %}
+
+{% block body %}
+	{% block menu %}
+		{% include "taxiTec/menu-AM.html" %}
+	{% endblock menu %}
+
+	{% block content %}
+		<section class="main">
+			<h1>Bienvenido a <span>TaxiTec</span> {{user.first_name}}</h1>
+
+
+
+		</section>	
+	{% endblock content %}	
+{% endblock body %}
+
+

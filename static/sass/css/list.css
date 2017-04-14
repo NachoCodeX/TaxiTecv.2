@@ -1,0 +1,23 @@
+.list {
+  background: #f6f6f6;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em; }
+  .list th {
+    background: #30bc53;
+    color: #fff;
+    font-weight: lighter;
+    padding: 10px 10px; }
+  .list td {
+    text-align: center;
+    border-right: 1px solid #fff; }
+    .list td img {
+      margin-left: auto;
+      margin-right: auto;
+      width: 2.3em;
+      height: 2.3em;
+      border-radius: 50%; }
+  .list tr:nth-child(even) {
+    background: #ddd; }
+
+/*# sourceMappingURL=list.css.map */

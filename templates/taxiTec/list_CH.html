@@ -1,0 +1,46 @@
+{% extends '../base.html' %}
+
+{% block body %}
+	{% block menu %}
+		{% include "taxiTec/menu-AM.html" %}
+	{% endblock menu %}
+	
+	{% block content %}
+		<section class="container">
+			{% if object_list %}			
+				<h1 style="text-align:center">Lista de Choferes</h1>
+				<table class="list">
+					<tr>
+						<th>Foto</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Edad</th>
+						<th>Telefono</th>
+						<th>Telefono 2</th>
+						<th>Tipo de sangre</th>
+						<th>Acciones</th>
+					</tr>
+					{% for x in object_list  %}
+						<td><img src="{{x.getImage}}" alt=""></td>
+						<td>{{x}}</td>
+						<td>{{x.getLastName}}</td>
+						<td>{{x.getAge}}</td>
+						<td>{{x.getNumber}}</td>
+						<td>{{x.getNumber2}}</td>
+						<td>{{x.getBloodType}}</td>
+						<td>
+							<a href="{% url 'taxitec:delete' x.getUserPK %}">Eliminar</a>
+							<a href="#">Editar</a>
+							
+						</td>
+					{% endfor %}
+				</table>
+				<a href="{% url 'taxitec:registrarCH' %}" class="button"><i class="icon-user-plus"></i>Agregar un chofer</a>
+			{% else %}
+				<h1 class="__titulo--big">No hay choferes</h1>
+				<a href="{% url 'taxitec:registrarCH' %}" class="button"><i class="icon-user-plus"></i>Agregar un chofer</a>
+			{% endif %}
+		</section>
+	{% endblock content %}
+
+{% endblock body %}

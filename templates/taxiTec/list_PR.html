@@ -1,0 +1,54 @@
+{% extends '../base.html' %}
+
+{% block body %}
+	{% block menu %}
+		{% include 'taxiTec/menu-AM.html' %}
+	{% endblock menu %}
+	
+	{% block content %}
+		<section class="container">
+			
+			{% if object_list %}
+		
+				<h1 class="__titulo--normal">Lista de Propietarios</h1>
+				<table class="list">
+					<tr>
+						<th>Foto</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Edad</th>
+						<th>Telefono</th>
+						<th>Acciones</th>
+					</tr>
+					{% for x in object_list%}
+						<tr>
+							<td><img src="{{x.getImage}}" alt=""></td>
+							<td>{{x}}</td>
+							<td>{{x.getLastName}}</td>
+							<td>{{x.getAge}}</td>
+							<td>{{x.getNumber}}</td>
+							<td>
+								<a href="#" class="button">Editar</a>
+								<a href="{% url 'taxitec:delete' x.getUserPK %}" class="button">Eliminar</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</table>
+				<a href="{% url 'taxitec:registrarPR' %}" class="button"> <i class="icon-user-plus"></i>Agregar propietario </a>
+			{% else %}
+				<div>
+					<h1 class="__titulo--big">No hay ningun Propietario</h1>
+					<a href="{% url 'taxitec:registrarPR' %}" class="button"> <i class="icon-user-plus"></i>Agregar propietario </a>
+				</div>
+			{% endif %}
+			
+
+
+
+		</section>
+
+
+	{% endblock content %}
+
+
+{% endblock body %}
