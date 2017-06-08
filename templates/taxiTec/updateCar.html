@@ -1,0 +1,14 @@
+{% extends  '../base.html' %}
+{% block title %}
+	Editar vehículo
+{% endblock title %}
+
+
+{% block content %}
+	<a href="{% url 'taxitec:PR-VH' %}">Volver..</a>
+	<form method="POST" class="form-login">{% csrf_token %}
+		{{form}}
+		<button type="submit" class="form__submit">Guardar</button>
+	</form>
+{% endblock content %}
+

@@ -1,46 +1,61 @@
-{% extends '../base.html' %}
+{% extends "../base.html" %}
+{% block title %}Lista de choferes{% endblock title %}
 
-{% block body %}
-	{% block menu %}
-		{% include "taxiTec/menu-AM.html" %}
-	{% endblock menu %}
-	
-	{% block content %}
-		<section class="container">
-			{% if object_list %}			
-				<h1 style="text-align:center">Lista de Choferes</h1>
-				<table class="list">
+{% block content %}
+	<div class="grid">
+		{% include 'taxiTec/header.html' %}
+		{% if user.userprofile.user_type == 'PR' %}
+			{% include 'taxiTec/menu-PR.html' %}
+		{% else %}
+			{% include 'taxiTec/menu-AM.html' %}			
+		{% endif %}
+		<main class="main">
+			<h1 class="title__normal">Lista de choferes</h1>
+			<section class="container-table">
+				
+				<table class="table">
 					<tr>
 						<th>Foto</th>
 						<th>Nombre</th>
 						<th>Apellido</th>
 						<th>Edad</th>
 						<th>Telefono</th>
-						<th>Telefono 2</th>
+						<th>Telefono 2</th>	
 						<th>Tipo de sangre</th>
 						<th>Acciones</th>
 					</tr>
 					{% for x in object_list  %}
-						<td><img src="{{x.getImage}}" alt=""></td>
-						<td>{{x}}</td>
-						<td>{{x.getLastName}}</td>
-						<td>{{x.getAge}}</td>
-						<td>{{x.getNumber}}</td>
-						<td>{{x.getNumber2}}</td>
-						<td>{{x.getBloodType}}</td>
-						<td>
-							<a href="{% url 'taxitec:delete' x.getUserPK %}">Eliminar</a>
-							<a href="#">Editar</a>
-							
-						</td>
+						<tr>
+							<td><img src="{{x.getImage}}" alt="" class="table__img"></td>
+							<td>{{x}}</td>
+							<td>{{x.getLastName}}</td>
+							<td>{{x.getAge}}</td>
+							<td>{{x.getNumber}}</td>
+							<td>{{x.getNumber2}}</td>
+							<td>{{x.getBloodType}}</td>
+							<td>
+								
+								<a href="{% url 'taxitec:updateCH_PR' x.getUserProfilePK %}" class="button"><i class="icon-edit"></i>Editar</a>
+								
+								<a href="{% url 'taxitec:in-detail' x.getUserPK %}" class="button"><i class="icon-table2"></i>Ingresos</a>
+	
+
+								<a href="{% url 'taxitec:delete' x.getUserPK %}" class="button button--delete"> <i class="icon-bin"></i>Eliminar</a>
+							</td>
+
+						</tr>
 					{% endfor %}
 				</table>
-				<a href="{% url 'taxitec:registrarCH' %}" class="button"><i class="icon-user-plus"></i>Agregar un chofer</a>
-			{% else %}
-				<h1 class="__titulo--big">No hay choferes</h1>
-				<a href="{% url 'taxitec:registrarCH' %}" class="button"><i class="icon-user-plus"></i>Agregar un chofer</a>
-			{% endif %}
-		</section>
-	{% endblock content %}
+			</section>
 
-{% endblock body %}
+			<div class="container container--add">
+				{% if  user.userprofile.user_type == 'AM' %}
+					<a href="{% url 'taxitec:registrarCH' %}" class="button button--add"><i class="icon-user-plus"></i>Agregar un chofer </a>
+				{% else %}
+						<a href="{% url 'taxitec:registrarCH2' %}" class="button button--add"><i class="icon-user-plus"></i>Agregar un chofer </a>
+				{% endif %}	
+			</div>
+		</main>
+		{% include 'taxiTec/footer.html' %}
+	</div>
+{% endblock content %}

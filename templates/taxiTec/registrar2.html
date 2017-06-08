@@ -2,10 +2,13 @@
 
 {% block body %}
 	{% block content %}
-
+		
 		<section class="container">
 			<a href="{% url 'taxitec:homeAM' %}">Volver</a>
 			<h1 style='text-align:center'>Registrar un propietario</h1>
+			{% if form.user.errors %}
+				<h1>ERRORES</h1>
+			{% endif %}
 			<form method="POST" class="form-login" enctype="multipart/form-data">
 				{% csrf_token %}
 				{{form.user}}

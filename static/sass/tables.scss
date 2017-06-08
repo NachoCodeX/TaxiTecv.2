@@ -1,0 +1,82 @@
+@import 'variables';
+
+
+
+.container-table{
+	width:95%;
+	min-width:900px;
+	margin:1em auto;
+	@media screen and (max-width: 1200px) {
+		margin: 1em 1em;
+	}
+	 
+	th{
+		//padding:0.5em;
+		color: #fff;
+		background: $p-color;
+	}
+
+	//p{background:lighten($a-color,20); padding:0.5em; text-align:center; color:#fff;}
+
+	.table__img{
+		height: 4em;
+		width: 4em;
+		border-radius: 50%;
+		margin-left:auto;
+		margin-right: auto;
+		padding:5px;
+	}
+	tr{text-align:center; border-bottom:1px solid rgba(#eee,0.1);}
+
+}
+
+
+.table{
+	overflow: hidden;
+	-webkit-border-radius: 7px;
+	box-shadow:0 0 10px 0 rgba(#000,0.2);
+	margin-top: 0.5em;
+	tr{color:$t-color; height:3em;}
+	& tr:last-child{border-bottom:none;}
+	& tr:first-child{color:$tt-color;}
+	border-collapse:collapse;
+	border-style:hidden;
+	width: 100%;
+	
+
+	& tr:nth-child(even){background: #eee;}
+	& tr:nth-child(odd){background: $bg-color;}
+
+}
+
+.table--small{
+	width:50%;
+	margin:auto;
+}
+
+
+.td--cal{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	height:3em;
+}
+
+.container-table--income{
+	display: flex;
+}
+
+.container--income{
+	margin:2em 1em;
+
+}
+
+.table--income{
+	width:50%;
+	margin:2em;
+}
+
+.be_green{
+	color:#fff;
+	background: $p-color;
+}

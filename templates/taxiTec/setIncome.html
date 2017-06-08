@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+{% block title %}Ingresos{% endblock title %}
+
+{% block content %}
+	<div class="grid">
+		{% include 'taxiTec/header.html' %}
+		{% include 'taxiTec/menu-CH.html' %}
+		<main class="main">
+			<h1 class="title__normal">Ingresos diarios</h1>
+			<form method="POST" class="form-login">{% csrf_token %}
+				{{form}}
+				<button type="submit" class="form__submit">Guardar</button>
+			</form>
+
+		</main>
+		{% include 'taxiTec/footer.html' %}
+	</div>
+{% endblock content %}

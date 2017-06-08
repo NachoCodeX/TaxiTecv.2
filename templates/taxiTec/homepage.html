@@ -1,0 +1,49 @@
+<section class="main__sec container">
+	<h1 class="title__normal">Bienvenido {{request.user.first_name}}</h1>
+
+	<article class="main__art">
+		<div class="art__div">
+			<h3>Control</h3>
+			<div class="flex-row">
+					<p class="text--light">Usted con TAXITEC puede controlarlo todo, desde sus choferes hasta sus vehiculos en tiempo real.</p>
+					{% load static %}
+					<img src="{% static 'img/con.png' %}" alt="">
+			</div>
+		</div>
+		<div class="art__div">
+			<h3>Seguridad</h3>
+			<div class="flex-row">
+				<p class="text--light">En TAXITEC nos preocupamos por la seguridad de sus datos, por eso lo protegemos con la mejor tecnología en encriptado.</p>
+				<img src="{% static 'img/car.png' %}" alt="">
+			</div>
+
+		</div>
+		<div class="art__div">
+			<h3>Amigable</h3>
+			<div class="flex-row">
+				<p class="text--light">TAXITEC le proporciona una interfaz amigable. Lista para cualquier persona, tengo o no conocimientos en informatica</p>
+				<img src="{% static 'img/tools-icon.png' %}" alt="">
+			</div>
+
+		</div>
+	</article>
+
+	<section class="container-home">
+		<h3 class="title__normal--h3">Guía rápida</h3>
+		<p><i class="icon-home"></i> Inico - Regresa a la pagina principal</p>
+		{% if user.userprofile.user_type == 'AM' %}
+			<p><i class="icon-user-tie"></i> Propietarios - Lista a todos los propietarios</p>
+		{% endif %}
+
+		{% if user.userprofile.user_type == 'PR' or user.userprofile.user_type == 'AM' %}
+			<p><i class="icon-user"></i> Choferes - Lista a todos los choferes</p>
+		{% endif %}
+
+		<p><i class="icon-car"></i> Vehículos-Lista todos los vehiculos</p>
+		
+		<p><i class="icon-trophy"></i> Ingresos- Agregar ingresos</p>
+		<p><i class="icon-enter"></i> Cerrar Sesión - Cerrar Sesión del usuario</p>
+
+	</section>
+
+</section>

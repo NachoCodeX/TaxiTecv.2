@@ -1,0 +1,40 @@
+{% extends '../base.html' %}
+{% block title %}Informacion-{{object}}{% endblock title %}
+
+{% block content %}
+	
+
+	<div class="grid">
+		{% include 'taxiTec/menu-CH.html' %}
+		{% include 'taxiTec/header.html' %}
+		<main class="main">
+			{% if object %}
+				<h1 class="title__normal">Informacion de tu vehículo</h1>
+				<section class="container-table">
+					<table class="table table--small">
+						<tr><th>Información</th></tr>
+
+						<tr><td>Modelo: <span>{{object.model}}</span></td></tr>
+						<tr><td>Número: <span>{{object.number}}</span></td></tr>
+						<tr><td>Placas: <span>{{object.plates}}</span></td></tr>
+						<tr><td>Km.recorridos: <span>{{object.km}}</span></td></tr>
+						<tr><td>Propietario: <span>{{object.owner}}</span></td></tr>
+					</table>
+				</section>
+			{% else %}
+				<h1 class="title__normal">No tienes un vehiculo</h1>
+			{% endif %}
+
+
+
+
+
+
+
+		</main>
+		{% include 'taxiTec/footer.html' %}
+	</div>
+{% endblock content %}
+
+
+

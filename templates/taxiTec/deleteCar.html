@@ -1,0 +1,10 @@
+{% extends '../base.html' %}
+
+{% block content %}
+	<form method="POST" class="form-login form-login--delete">
+		<h1 class="title__normal">Desea eliminar el registro del vehiculo</h1>
+		{% csrf_token %}
+		<button type="submit" class="form__submit form__submit--50">Eliminar</button>
+		<a href="/home/{{request.user.userprofile.user_type}}" class="form__submit form__submit--cancelar form__submit--50">Cancelar</a>
+	</form>
+{% endblock content %}

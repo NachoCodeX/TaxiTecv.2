@@ -1,0 +1,17 @@
+{% extends '../base.html' %}
+
+{% block content %}
+	{% if user.userprofile.user_type == 'AM' %}
+		<a href="{% url 'taxitec:AM-VH' %}">Volver..</a>
+	{% else %}
+		<a href="{% url 'taxitec:PR-VH' %}">Volver..</a>
+
+	{% endif %}
+
+	<h1 class="title__normal">Agregar un vehiculo</h1>
+	<form method="POST" class="form-login">
+		{% csrf_token %}
+		{{form}}
+		<button type="submit" class="form__submit">Guardar</button>
+	</form>
+{% endblock content %}

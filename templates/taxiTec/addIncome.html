@@ -1,0 +1,13 @@
+{% extends "../base.html" %}
+
+
+{% block content %}
+	{% if user.userprofile.user_type == 'PR' %}
+		<a href="{% url 'taxitec:PR-IN' %}">Volver</a>
+	{% endif %}
+	<form method="POST" class="form-login">
+		{% csrf_token %}
+		{{form}}
+		<button type="submit" class="form__submit">Guardar</button>
+	</form>
+{% endblock content %}

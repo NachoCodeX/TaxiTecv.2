@@ -1,0 +1,47 @@
+@import 'variables';
+.header{
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	box-shadow: inset 0 -5px 0 0 $p-color,
+				inset 0 5px 0 0 $p-color;
+
+	background: darken($p-color,0);
+
+	.form-search{
+		height: 100%;
+		width: 30%;
+		.form__input{
+			color: $mt-color;
+		}
+	}
+}
+
+
+.title{
+	font-size: 1.5em;
+	font-family: $title;
+	color:#fff;
+}
+.title--big{
+	font-size:2em;
+}
+.title__normal{
+	font-size:$text;
+	font-weight: lighter;
+	text-align: center;
+	margin:0.5em 0;
+}
+
+.title__normal--h3{
+	font-size:$text;
+	font-weight: lighter;	
+	margin:0.5em 0;
+}
+
+.header-index{
+	height: 5em;
+	grid-row:1;
+	grid-column:1;
+	width: 100%;
+}

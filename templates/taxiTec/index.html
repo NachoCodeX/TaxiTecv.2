@@ -2,19 +2,32 @@
 	
 
 {% block content %}
-	<div class="container-form">
-		<form class="form-login" method="POST">
-		<h1>Ingrese aqui</h1>	
-			{% csrf_token %}
-			<input class="form__input" type="text" name="username" placeholder="Usuario">
+	<div class="grid-index">
+		<header class="header header-index"><h1 class="title title--big">BIENVENIDOS A TAXITEC</h1></header>
 		
-			<input class="form__input"  type="password" name="password" placeholder="Contraseña">
-		
-			<button type="submit" class="form__submit">Ingresar</button>
-		</form>
+		<div class="form-container">
+			<form class="form-login" method="POST">
+				
+				<div class="form__img">
+					{% load static %}
+					<img src="{% static 'img/empty.jpg' %}" alt="">
+					<p>Puede acceder con su cuenta</p>
+				</div>
+				{% if error %}
+					<p class="text--error">{{error}}</p>
+				{% endif %}	
+				{% csrf_token %}
+				<input class="form__input" type="text" name="username" placeholder="Usuario">
+				
+				<input class="form__input"  type="password" name="password" placeholder="Contraseña">
+				
+				<button type="submit" class="form__submit">Ingresar</button>
+				
+			</form>
+	
+		</div>
+	
 	</div>
-
-
 {% endblock content %}	
 
 

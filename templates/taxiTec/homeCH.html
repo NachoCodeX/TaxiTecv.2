@@ -2,3 +2,14 @@
 {% block title %}
 	Home-CHOFER
 {% endblock title %}
+
+{% block content %}
+	<div class="grid">
+		{% include 'taxiTec/header.html' %}
+		{% include 'taxiTec/menu-CH.html' %}
+		<main class="main">
+			{% include 'taxiTec/homepage.html' %}
+		</main>	
+		{% include 'taxiTec/footer.html' %}
+	</div>
+{% endblock content %}

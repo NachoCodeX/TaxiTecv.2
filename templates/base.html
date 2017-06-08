@@ -7,23 +7,17 @@
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'sass/css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'sass/css/icon.css' %}">
+	<script src="{% static 'js/jquery.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
 </head>
 	
 
-{% block body %}
-	<body class="index-form">
-		{% block menu %}
-			
-		{% endblock menu %}
+<body>
+	{% block content %}	
 
-		{% block content %}
-			
-		{% endblock content %}
+	{% endblock content %}
+	
 
-		{% block footer %}
-			<footer>&copy; Copyright 2017-Nacho Castillo</footer>
-		{% endblock footer %}
-	</body>
-{% endblock body %}
+</body>
+
 </html>

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?b6kjjh');
-  src:  url('fonts/icomoon.eot?b6kjjh#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?b6kjjh') format('truetype'),
-    url('fonts/icomoon.woff?b6kjjh') format('woff'),
-    url('fonts/icomoon.svg?b6kjjh#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?3flvdw');
+  src:  url('fonts/icomoon.eot?3flvdw#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?3flvdw') format('truetype'),
+    url('fonts/icomoon.woff?3flvdw') format('woff'),
+    url('fonts/icomoon.svg?3flvdw#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,14 +24,41 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-automobile:before {
+.icon-edit:before {
+  content: "\e905";
+}
+.icon-car:before {
+  content: "\e906";
+}
+.icon-card:before {
   content: "\e900";
+}
+.icon-card2:before {
+  content: "\e901";
+}
+.icon-arrow-down:before {
+  content: "\e903";
+}
+.icon-car3:before {
+  content: "\e904";
 }
 .icon-home:before {
   content: "\e902";
 }
 .icon-camera:before {
   content: "\e90f";
+}
+.icon-profile:before {
+  content: "\e923";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-location:before {
+  content: "\e948";
 }
 .icon-user:before {
   content: "\e971";
@@ -45,14 +72,17 @@
 .icon-user-minus:before {
   content: "\e974";
 }
+.icon-user-check:before {
+  content: "\e975";
+}
 .icon-user-tie:before {
   content: "\e976";
 }
-.icon-hour-glass:before {
-  content: "\e979";
+.icon-lock:before {
+  content: "\e98f";
 }
-.icon-wrench:before {
-  content: "\e991";
+.icon-unlocked:before {
+  content: "\e990";
 }
 .icon-cog:before {
   content: "\e994";
@@ -63,23 +93,23 @@
 .icon-stats-dots:before {
   content: "\e99b";
 }
+.icon-stats-bars:before {
+  content: "\e99c";
+}
 .icon-stats-bars2:before {
   content: "\e99d";
+}
+.icon-trophy:before {
+  content: "\e99e";
 }
 .icon-rocket:before {
   content: "\e9a5";
 }
 .icon-bin:before {
-  content: "\e9ac";
+  content: "\e9ad";
 }
-.icon-truck:before {
-  content: "\e9b0";
-}
-.icon-sad:before {
-  content: "\e9e5";
-}
-.icon-grin:before {
-  content: "\e9e9";
+.icon-heart:before {
+  content: "\e9da";
 }
 .icon-plus:before {
   content: "\ea0a";
@@ -93,19 +123,16 @@
 .icon-checkmark:before {
   content: "\ea10";
 }
-.icon-checkmark2:before {
-  content: "\ea11";
-}
 .icon-enter:before {
   content: "\ea13";
+}
+.icon-circle-down:before {
+  content: "\ea43";
 }
 .icon-table2:before {
   content: "\ea71";
 }
-.icon-fb:before {
+.icon-facebook2:before {
   content: "\ea91";
-}
-.icon-git:before {
-  content: "\eab0";
 }
 

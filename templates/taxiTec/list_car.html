@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+	<div class="grid">
+		{% include 'taxiTec/header.html' %}	
+		{% include 'taxiTec/menu-AM.html' %}
+		<main class="main">
+			<h1 class="title__normal">Lista de vehículos</h1>
+			<section class="container-table">
+				<table class="table">
+					<tr>
+						<th>Modelo</th>
+						<th>Número</th>
+						<th>Placas</th>
+						<th>Km</th>
+						<th>Chofer asig.</th>
+						<th>Acciones<th>
+					</tr>
+					{% for x in object_list  %}
+						<tr>
+							<td>{{x.model}}</td>
+							<td>{{x.number}}</td>
+							<td>{{x.plates}}</td>
+							<td>{{x.km}}</td>
+							<td>{{x.driver}}</td>
+							<td>
+								<a href="#" class="button"><i class="icon-edit"></i>Editar</a>
+								<a href="{% url 'taxitec:deleteCar' x.pk %}" class="button button--delete"><i class="icon-bin"></i>Eliminar</a>
+							</td>
+						</tr>
+
+
+					{% endfor %}
+				</table>
+			</section>
+			<div class="container container--add">
+				<a href="{% url 'taxitec:add-carAM' %}" class="button button--add"><i class="icon-car"></i>Agregar un vehiculo </a>
+			</div>
+		</main>
+		{% include 'taxiTec/footer.html' %}
+	</div>
+{% endblock content %}

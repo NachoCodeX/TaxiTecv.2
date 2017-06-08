@@ -1,0 +1,13 @@
+<aside class="aside">
+			<div class="aside__profile">
+				<img src="{{user.userprofile.getImage}}" class="aside__img">
+				<p>{{user.first_name}}</p>
+			</div>
+			<nav class="aside__menu">
+				<li class="menu__li"><a href="{% url 'taxitec:homeCH' %}"><i class="icon icon-home"></i>INICIO</a></li>
+				<li class="menu__li"><a href="{% url 'taxitec:getCar'%}"><i class="icon icon-car"></i>VEHICULO</a></li>
+				<li class="menu__li"><a href="{% url 'taxitec:setIncome' %}"><i class="icon icon-profile"></i>INGRESOS</a></li>
+				<li class="menu__li"><a href="#"><i class="icon icon-profile"></i>EGRESOS</a></li>
+				<li class="menu__li"><a href="{% url 'taxitec:logout' %}"><i class="icon icon-enter"></i>CERRAR SESIÓN</a></li>
+			</nav>
+		</aside>

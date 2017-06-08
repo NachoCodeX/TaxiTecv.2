@@ -3,23 +3,15 @@
 	Home-PROPIETARIO
 {% endblock title %}
 
-{% block body %}
-	
-	{% block menu %}
+
+{% block content %}
+	<div class="grid">
+		{% include 'taxiTec/header.html' %}
 		{% include 'taxiTec/menu-PR.html' %}
-	{% endblock menu %}
-
-	{% block content %}
-		<section class="info" >
-			<h1 class="__titulo--normal">Bienvenido a TaxiTec {{user.first_name}}</h1>
-			
-
-			
-		
-			
-		</section>
-	{% endblock content %}
+		<main class="main">
+			{% include 'taxiTec/homepage.html' %}
+		</main>
+		{% include 'taxiTec/footer.html' %}
+	</div>
+{% endblock content %}
 	
-
-
-{% endblock body %}

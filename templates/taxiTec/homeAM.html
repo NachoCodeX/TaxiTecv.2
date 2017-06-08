@@ -3,19 +3,16 @@
 	Home-ADMINISTRADOR
 {% endblock title %}
 
-{% block body %}
-	{% block menu %}
-		{% include "taxiTec/menu-AM.html" %}
-	{% endblock menu %}
 
-	{% block content %}
-		<section class="main">
-			<h1>Bienvenido a <span>TaxiTec</span> {{user.first_name}}</h1>
+{% block content %}
+	<div class="grid">
+		{% include 'taxiTec/header.html' %}	
+		{% include 'taxiTec/menu-AM.html' %}
+		<main class="main">
+			{% include 'taxiTec/homepage.html' %}
+				
 
-
-
-		</section>	
-	{% endblock content %}	
-{% endblock body %}
-
-
+		</main>
+		{% include 'taxiTec/footer.html' %}
+	</div>
+{% endblock content %}

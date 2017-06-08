@@ -1,44 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+//@import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
 @import 'variables';
 @import 'forms';
-@import 'menu';
-@import 'list';
-@import 'index';
 @import 'home';
+@import 'menu';
+@import 'header';
+@import 'tables';
+
+.icon-heart{
+	color:rgba(red,0.6);
+}
 
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto';
+	
 }
+a{text-decoration:none; color:lighten(blue,15);}
+.text--error{color:red;}
 
-.index-form{
-	display: flex;
-	flex-direction: column;
-	background: $p-color;
-	min-height: 100vh;
-}
+
+// .index-form{
+// 	display: flex;
+// 	flex-direction: column;
+// 	background: red;
+// 	min-height: 100vh;
+// }
 
 body{
 	background: $bg-color;
-	
+	min-height: 100vh;
 }
 
 .container{
-	width:98%;
+	width:95%;
 	margin:1em auto;
-
 }
 
-footer{
-	width: 100%;
-	background: darken($p-color,5);
-	height: 2em;
-	color: #fff;
-	text-align: center;
-
+.container--update{
+	h1{text-align:center; margin-bottom:1em;}
 }
+
+
 
 
 input,img{
@@ -53,14 +57,26 @@ input,img{
 	padding:5px;
 	background: $a-color;
 	border-radius: 0.3em;
+
+	i{
+		margin-right: 5px;
+	}
 }
 
-.__titulo--big{
-	text-align:center;
-	font-size: 3em;
+.button--add{
+	background: $p-color;
 }
 
-.__titulo--normal{
-	text-align:center;
-	font-size: 2em;
+.button--delete{background: #f44236;}
+
+.text--light{
+	font-size: 0.9em;
+	font-weight: lighter;
 }
+
+
+.p--income{
+	font-size:1.5em;
+}
+
+#income{color:$p-color;}

@@ -6,7 +6,8 @@ from .models import *
 # admin.site.register(Admin)
 admin.site.register(Owner)
 admin.site.register(Driver)
-
+admin.site.register(Car)
+admin.site.register(Ingresos)
 admin.site.unregister(User)
 class UserProfileInline(admin.StackedInline):
 	model=UserProfile

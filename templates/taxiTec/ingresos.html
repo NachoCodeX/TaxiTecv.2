@@ -1,0 +1,51 @@
+{% extends '../base.html' %}
+{% block title %}
+	Ingresos
+{% endblock title %}
+
+{% block content %}
+	<div class="grid">
+		{% include 'taxiTec/menu-PR.html' %}
+		{% include 'taxiTec/header.html' %}
+		
+		<main class="main">
+			<section class="container-table container-table--income">
+				<table class="table table--income" id="table">
+					<tr>
+						<th>Calcular</th>
+						<th>Fecha</th>
+						<th>Ingresos</th>
+						<th>Chofer</th>
+						<th></th>
+					</tr>
+					{% for x in object_list  %}
+						<tr id="td{{forloop.counter}}">
+							<td class="td--cal" ><input id="check{{forloop.counter}}" name="td{{forloop.counter}}" type="checkbox"></td>
+							<td>{{x.date}}</td>
+							<td>${{x.ingreso}}</td>
+							<td>{{x.driver}}</td>
+							<td>
+								<form method="POST" action="{% url 'taxitec:deleteIN' x.pk %}">{% csrf_token %}
+									<button type="submit" class="form__submit--del"> <i class="icon-bin"></i>Eliminar</button>
+								</form>
+							</td>
+						</tr>
+					{% endfor %}
+
+				</table>
+
+				<div class="container--income">
+					<p class="p--income">Ingresos del <span id="date1">X/X/X</span> al <span id="date2">X/X/X</span></p>
+					<p class="p--income">con un total de: $<span id="income">0.00</span></p>
+				</div>
+			</section>
+<!-- 
+			<div class="container container--add">
+				<a href="{% url 'taxitec:addincome' %}" class="button button--add"><i class="icon-stats-dots"></i>Agregar un ingreso</a>
+			</div> -->
+		</main>
+
+
+		{% include 'taxiTec/footer.html' %}
+	</div>
+{% endblock content %}

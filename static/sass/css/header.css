@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -5px 0 0 #2ba84a, inset 0 5px 0 0 #2ba84a;
+  background: #2ba84a; }
+  .header .form-search {
+    height: 100%;
+    width: 30%; }
+    .header .form-search .form__input {
+      color: #aab2bd; }
+
+.title {
+  font-size: 1.5em;
+  font-family: "Orbitron";
+  color: #fff; }
+
+.title--big {
+  font-size: 2em; }
+
+.title__normal {
+  font-size: "Roboto";
+  font-weight: lighter;
+  text-align: center;
+  margin: 0.5em 0; }
+
+.title__normal--h3 {
+  font-size: "Roboto";
+  font-weight: lighter;
+  margin: 0.5em 0; }
+
+.header-index {
+  height: 5em;
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%; }
+
+/*# sourceMappingURL=header.css.map */

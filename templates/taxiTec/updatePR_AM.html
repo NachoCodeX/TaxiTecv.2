@@ -1,0 +1,23 @@
+{% extends '../base.html' %}
+
+
+{% block content %}
+	<div class="container container--update">
+		{% if user.userprofile.user_type == 'PR' %}
+			<a href="{% url 'taxitec:PR-CH' %}">Volver..</a>
+		{% else %}
+			<a href="{% url 'taxitec:AM-CH' %}">Volver..</a>
+		{% endif %}
+		<h1>Editar chofer:{{form3.first_name.value}}</h1>
+		<form method="POST" class="form-login">
+			{% csrf_token %}
+
+			{{form3}}
+
+			<label for="id_age">Edad:</label><input class="form__input" id="id_age" min="0" name="age" type="number" value="{{form.age.value}}" />
+			<label for="id_phone_number">Numero de telefono:</label><input class="form__input" id="id_phone_number" maxlength="10" name="phone_number" type="text" value="{{form.phone_number.value}}" />
+			{{form2}}
+			<button class="form__submit">Guardar</button>
+		</form>
+	</div>
+{% endblock content %}

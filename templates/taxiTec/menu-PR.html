@@ -1,21 +1,14 @@
-<header class="header">
-		<nav class="menu">
-			<div class="item-image">
-				<img src="{{user.userprofile.image.url}}" alt="">
-				<p>{{user.first_name}} {{user.last_name}}</p>
-			
+<aside class="aside">
+			<div class="aside__profile">
+				<img src="{{user.userprofile.getImage}}" class="aside__img">
+				<p>{{user.first_name}}</p>
 			</div>
-				<div class="item">
-				<a href="{% url 'taxitec:homePR' %}"><i class="icon icon-home"></i><p>Inicio</p></a>
-			</div>
-
-			<div class="item"><a href="#"><i class="icon icon-users"></i><p>Choferes</p></a></div>
-
-			<div class="item"><a href="#"><i class="icon icon-automobile"></i><p>Vehiculos</p></a></div>
-		
-
-			<div class="item"><a href="#"><i class="icon icon-cogs"></i><p>Informacion</p></a></div class="item">
-			
-			<div class="item"><a href="{% url 'taxitec:logout' %}"><i class="icon icon-enter"></i><p>Logout</p></a></div>
-		</nav>
-	</header>
+			<nav class="aside__menu">
+				<li class="menu__li"><a href="{% url 'taxitec:homePR' %}"><i class="icon icon-home"></i>INICIO</a></li>
+				<li class="menu__li"><a href="{% url 'taxitec:PR-CH' %}"><i class="icon icon-user"></i>CHOFERES</a></li>
+				<li class="menu__li"><a href="{% url 'taxitec:PR-VH' %}"><i class="icon icon-car"></i>VEHICULOS</a></li>
+				<li class="menu__li"><a href="{% url 'taxitec:PR-IN' %}"><i class="icon icon-trophy"></i>INGRESOS</a></li>
+				<!-- <li class="menu__li"><a href="{% url 'taxitec:PR-IN' %}"><i class="icon icon-stats-dots"></i>EGRESOS</a></li> -->
+				<li class="menu__li"><a href="{% url 'taxitec:logout' %}"><i class="icon icon-enter"></i>CERRAR SESIÓN</a></li>
+			</nav>
+		</aside>

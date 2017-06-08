@@ -1,11 +1,11 @@
 {% extends '../base.html' %}
 
 {% block content %}
-	<form method="post">
+	<form method="POST" class="form-login form-login--delete">
 		{% csrf_token %}
-		<h1>¿Desea eliminar el rergistro de {{user}} ?</h1>
-		<button type="submit">Si, eliminar</button>
-		<a href="/home/{{request.user.userprofile.user_type}}">Cancelar</a>
+		<h1 class="title__normal">¿Desea eliminar el registro de {{user}} ?</h1>
+		<button type="submit" class="form__submit form__submit--50">Si, eliminar</button>
+		<a class="form__submit form__submit--cancelar form__submit--50" href="/home/{{request.user.userprofile.user_type}}">Cancelar</a>
 	</form>
 {% endblock content %}
 	
